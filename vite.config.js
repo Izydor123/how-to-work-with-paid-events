@@ -13,5 +13,5 @@ export default defineConfig({
       },
     },
   },
-  
+  base: "/how-to-work-with-paid-events"
 });

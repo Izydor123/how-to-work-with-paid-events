@@ -1,0 +1,150 @@
+.header {
+    position: relative;
+    padding: 2rem;
+    min-height: 85vh;
+    overflow: hidden;
+    margin-bottom: -2px;
+}
+
+.header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/63822.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    filter: brightness(0.8) contrast(1.1);
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 4px);
+    background: linear-gradient(
+        180deg,
+        rgba(85, 4, 91, 0.3) 0%,
+        rgba(85, 4, 91, 0.6) 50%,
+        rgb(85, 4, 91) 100%
+    );
+    z-index: 2;
+}
+
+.header-content {
+    position: relative;
+    max-width: 1500px;
+    margin: 0;
+    margin-left: 8%;
+    width: 45%;
+    margin-top: 12%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    z-index: 3;
+    animation: fadeInUp 1s ease-out;
+}
+
+.header-content h1 {
+    text-align: left;
+    flex: 0 1 auto;
+    padding-right: 1rem;
+    font-size: clamp(3.5rem, 6vw, 7rem);
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: 700;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
+    max-width: 800px;
+    line-height: 1.1;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (min-width: 1441px) {
+    .header-content {
+        width: 40%;
+        margin-left: 12%;
+    }
+    
+    .header-content h1 {
+        font-size: 6rem;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .header-content {
+        width: 50%;
+        margin-left: 8%;
+    }
+    
+    .header-content h1 {
+        font-size: 5rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .header {
+        min-height: 70vh;
+    }
+    
+    .header-content {
+        width: 60%;
+        margin-left: 6%;
+        margin-top: 15%;
+    }
+    
+    .header-content h1 {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        min-height: 60vh;
+    }
+    
+    .header-content {
+        width: 80%;
+        margin-left: 4%;
+        margin-top: 25%;
+    }
+    
+    .header-content h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        min-height: 50vh;
+    }
+    
+    .header-content {
+        width: 90%;
+        margin-left: 3%;
+        margin-top: 35%;
+    }
+    
+    .header-content h1 {
+        font-size: 2.8rem;
+    }
+}

@@ -1,0 +1,153 @@
+.form {
+    background-color: rgb(54, 2, 58);
+    padding: 4rem 2rem;
+    color: whitesmoke;
+    position: relative;
+    z-index: 1;
+}
+
+.form-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.form h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: whitesmoke;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: rgba(245, 245, 245, 0.9);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    background: rgb(127, 6, 135);
+    color: whitesmoke;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgb(54, 2, 58);
+}
+
+.form-group input::placeholder {
+    color: rgba(245, 245, 245, 0.5);
+}
+
+.phone-group .phone-input {
+    display: flex;
+    gap: 1rem;
+}
+
+.phone-input .region-select {
+    width: 6.2rem;
+    flex-shrink: 0;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    background: transparent;
+    border: 2px solid whitesmoke;
+    color: whitesmoke;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background: whitesmoke;
+    color: rgb(54, 2, 58);
+}
+
+.form-group input:invalid {
+    border-color: rgba(255, 99, 71, 0.5);
+}
+
+.error {
+    border-color: #ff4444 !important;
+    background-color: #fff8f8;
+  }
+  
+  .error-message {
+    color: #ff4444;
+    font-size: 1rem;
+    margin-top: 4px;
+    display: block;
+  }
+  
+  .submit-error {
+    color: #ff4444;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff8f8;
+    border: 1px solid #ffdddd;
+    border-radius: 4px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .phone-input input.error {
+    border-color: #ff4444 !important;
+  }
+
+@media screen and (max-width: 768px) {
+    .form {
+        padding: 2rem 1rem;
+    }
+
+    .form-content {
+        padding: 1.5rem;
+    }
+
+    .form h2 {
+        font-size: 2rem;
+    }
+
+    .phone-group .phone-input {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .phone-input .region-select {
+        width: 100%;
+    }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

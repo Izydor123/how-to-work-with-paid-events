@@ -1,0 +1,16 @@
+.app {  
+    color: whitesmoke;
+    line-height: 1.6;
+    background-color: rgb(85, 4, 91);
+  }
+  
+  button {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }

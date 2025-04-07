@@ -52,7 +52,7 @@ function Form() {
 
   useEffect(() => {
     let timeoutId;
-    
+
     if (status === 'Form submitted successfully!') {
       setIsButtonDisabled(true);
       timeoutId = setTimeout(() => {
@@ -77,21 +77,21 @@ function Form() {
         if (!/^[a-zA-Z\s]*$/.test(value)) {
           return 'Name should only contain letters and spaces';
         }
-        if (value.trim().split(/\s+/).length   != 2) {
+        if (value.trim().split(/\s+/).length !== 2) {
           return 'Please enter your full name';
-        } 
+        }
         break;
-      
+
       case 'email':
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
           return 'Please enter a valid email address';
         }
         break;
-      
+
       case 'phone':
         const selectedRegion = regions.find(r => r.code === formData.region);
         const digitsOnly = value.replace(/\D/g, '');
-        
+
         if (!digitsOnly) {
           return 'Phone number is required';
         }
@@ -102,7 +102,7 @@ function Form() {
           return 'Phone number should only contain digits';
         }
         break;
-      
+
       case 'company':
         if (value && value.length < 2) {
           return 'Company name must be at least 2 characters long';
@@ -165,7 +165,6 @@ function Form() {
       const API_URL = import.meta.env.VITE_API_URL;
       const response = await fetch(API_URL, {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -206,7 +205,7 @@ function Form() {
     }
   };
 
-  return (  
+  return (
     <section className="form" id="form">
       <div className="form-content">
         <h2>Register for the Event</h2>
@@ -291,8 +290,8 @@ function Form() {
 
           {errors.submit && <div className="submit-error">{errors.submit}</div>}
 
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className="submit-button"
             disabled={isSubmitting || isButtonDisabled}
           >
@@ -303,5 +302,4 @@ function Form() {
     </section>
   );
 }
-
 export default Form;

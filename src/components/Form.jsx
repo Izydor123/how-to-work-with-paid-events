@@ -79,7 +79,7 @@ function Form() {
         if (!/^[a-zA-Z\s]*$/.test(value)) {
           return 'Name should only contain letters and spaces';
         }
-        if (value.trim().split(/\s+/).length !== 2) {
+        if (value.trim().split(/\s+/).length < 2) {
           return 'Please enter your full name';
         }
         break;

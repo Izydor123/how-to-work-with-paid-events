@@ -50,6 +50,8 @@ function Form() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
+  const FORM_URL = import.meta.env.VITE_FORM_URL;
+
   useEffect(() => {
     let timeoutId;
 
@@ -162,20 +164,32 @@ function Form() {
     setStatus('Submitting...');
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL;
-      const response = await fetch(API_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = FORM_URL;
+      form.target = '_blank'; 
+      form.style.display = 'none';
+
+      const fullPhoneNumber = `${formData.region}${formData.phone}`;
+
+      const formFields = {
+        'entry.1900654331': formData.name,
+        'entry.497331105': formData.email,
+        'entry.645117345': fullPhoneNumber,
+        'entry.889127360': formData.company
+      };
+
+      Object.entries(formFields).forEach(([key, value]) => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value;
+        form.appendChild(input);
       });
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Submission failed');
-      }
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
 
       setStatus('Form submitted successfully!');
       setFormData({
@@ -204,6 +218,7 @@ function Form() {
       setIsSubmitting(false);
     }
   };
+
 
   return (
     <section className="form" id="form">

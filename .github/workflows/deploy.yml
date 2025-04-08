@@ -28,7 +28,7 @@ jobs:
       - name: Build 🏗️
         run: npm run build 
         env:
-          VITE_API_URL: ${{ secrets.API_URL }}
+          VITE_FORM_URL: ${{ secrets.FORM_URL }}
           PUBLIC_URL: /how-to-work-with-paid-events
 
       - name: Deploy 🚀
